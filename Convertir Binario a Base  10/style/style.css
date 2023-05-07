@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  color: white;
+  font-family: "Concert One", cursive;
+}
+.mensajes {
+  color: greenyellow;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
+
+.contenedor img {
+  width: 40%;
+}
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+h1 {
+  text-align: center;
+}
+
+#ingresarDatos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+}
+
+#ingresarDatos input {
+  width: 40%;
+  height: 66%;
+  background-color: gray;
+  border-color: transparent;
+  border-radius: 1em;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+#mostrar {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+input::placeholder {
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+}
+
+input:focus{
+    outline: none;
+    border-color: transparent;
+
+}
