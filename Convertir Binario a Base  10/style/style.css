@@ -9,7 +9,7 @@ body {
   font-family: "Concert One", cursive;
 }
 .mensajes {
-  color: greenyellow;
+  color: rgb(231, 63, 63);
   font-size: 1.5em;
   text-align: center;
   margin-top: 0.5%;

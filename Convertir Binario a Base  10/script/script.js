@@ -1,9 +1,12 @@
 const myInput = document.getElementById("numeroBinario");
 const myDiv = document.getElementById("mostrar");
+const error = document.getElementsByClassName("mensajes")
+console.log(error);
 
 myInput.addEventListener("keyup", () => {
+  error[0].textContent= "";
   if (myInput.value === "") {
-    myDiv.textContent = "valor vacio";
+    myDiv.textContent = "";
   } else {
     let binario = myInput.value;
     let validacion = 0;
@@ -11,11 +14,11 @@ myInput.addEventListener("keyup", () => {
     let cantidadDecimales = 0;
     for (let i = 0; i < longitud; i++) {
       if (
-        binario.charAt(i) === "0" ||
-        binario.charAt(i) === "1" ||
-        binario.charAt(i) === "."
+        binario.charAt(i) === '0' ||
+        binario.charAt(i) === '1' ||
+        binario.charAt(i) === '.'
       ) {
-        if (binario.charAt(i) === ".") {
+        if (binario.charAt(i) === '.') {
           cantidadDecimales++;
         }
         validacion++;
@@ -25,25 +28,29 @@ myInput.addEventListener("keyup", () => {
     if (validacion === longitud) {
       if (binario.indexOf(".") !== -1) {
         if (cantidadDecimales === 1) {
-          if (binario.length() - 1 <= 8) {
+          if (binario.length - 1 <= 20) {
             let fraccionaria = conversionFraccionaria(binario);
             myDiv.textContent = fraccionaria;
           } else {
-            myDiv.textContent = "Solo esta permtido ingresar hasta 8 dígitos.";
+            error[0].textContent="¡Error!";
+            myDiv.textContent = "Solo esta permtido ingresar hasta 20 dígitos.";
           }
         } else {
+          error[0].textContent="¡Error!";
           myDiv.textContent =
             "Si ingresa un binario fraccionario solo se admitira un punto decimal.";
         }
       } else {
-        if (longitud <= 8) {
+        if (longitud <= 20) {
           let decimal = conversionEntera(binario);
           myDiv.textContent = decimal;
         } else {
-          myDiv.textContent = "Solo esta permtido ingresar hasta 8 dígitos.";
+          error[0].textContent="¡Error!";
+          myDiv.textContent = "Solo esta permtido ingresar hasta 20 dígitos.";
         }
       }
     } else {
+      error[0].textContent="¡Error!";
       myDiv.textContent = "Un dígito ingresado no es un 0 o 1.";
     }
 
@@ -80,7 +87,7 @@ function conversionFraccionaria(binario){
     let entero = conversionEntera(parteEntera);
     let parteDecimal = binario.substring(binario.indexOf(".") + 1);
     let decimal = 0;
-    for (let i = 0; i < parteDecimal.length(); i++) {
+    for (let i = 0; i < parteDecimal.length; i++) {
         let numeroRelativo = parseInt(parteDecimal.charAt(i));
         decimal += numeroRelativo * 1 / (potenciacion(2, i + 1));
     }
