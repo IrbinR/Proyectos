@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Contraseñas</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    
+  </head>
+  <body>
+    <h1>Generador de contraseñas</h1>
+    <main>
+      <div class="informacion">
+        <div class="informacion__clave">
+          <input type="password" class="informacion__clave__resultado" />
+          <span class="material-symbols-outlined informacion__clave__icon">visibility_off</span>
+        </div>
+        <div class="informacion__actualizar">
+          <span class="material-symbols-outlined"> refresh </span>
+        </div>
+        <div class="informacion__copiar">
+          <span class="material-symbols-outlined"> content_copy </span>
+        </div>
+      </div>
+
+      <div class="titulo">
+        <span class="titulo__principal">Contraseña</span>
+        <span class="titulo__opcional"></span>
+      </div>
+
+      <div class="formato">
+        <div class="formato__longitud">
+          <label class="formato__longitud__titulo">Longitud:</label>
+          <input type="range" max="128" class="formato__longitud__1" />
+          <input type="number" min="0" max="128" class="formato__longitud__2"">
+        </div>
+        <div class="formato__opciones">
+          <span class="formato__opciones__titulo">Tipos de caracteres</span>
+          <div class="formato__opciones__principal">
+            <div class="formato__opciones__principal__valor">
+              <div class="formato__opciones__principal__estilo__2">A-Z</div>
+              <div class="formato__opciones__principal__estilo__2">a-z</div>
+              <div class="formato__opciones__principal__estilo__2">0-9</div>
+              <div class="formato__opciones__principal__estilo__2">/*+&...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>
