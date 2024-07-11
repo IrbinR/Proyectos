@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Radius Preview</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="propiedades">
+        <fieldset class="propiedades__medidas">
+          <legend>Dimensiones</legend>
+          <div>
+            <label for="ancho">Ancho</label>
+            <input type="number" name="" id="ancho">
+          </div>
+
+          <div>
+            <label for="altura">Altura</label>
+            <input type="number" name="" id="altura">
+          </div>
+        </fieldset>
+
+        <fieldset class="propiedades__css">
+          <legend>Código CSS</legend>
+        </fieldset>
+        <div></div>
+      </div>
+      <div class="contenedor">
+        <div class="top">
+          <span></span>
+          <div class="slider">
+            <input type="range" id="rmin" value="10" />
+            <input type="range" id="rmax" value="100" />
+            <div class="line"></div>
+          </div>
+          <span></span>
+        </div>
+
+        <div class="middle">
+          <div class="middle__range-left">
+            <div class="slider2">
+              <input type="range" id="rmin" value="10" />
+              <input type="range" id="rmax" value="100" />
+              <div class="line2"></div>
+            </div>
+          </div>
+
+          <div class="middle__radius"></div>
+
+          <div class="middle__range-right">
+            <div class="slider2">
+              <input type="range" id="rmin" value="10" />
+              <input type="range" id="rmax" value="100" />
+              <div class="line2"></div>
+            </div> 
+          </div>
+        </div>
+
+        <div class="bottom">
+          <span></span>
+          <div class="slider">
+            <input type="range" id="rmin" value="10" />
+            <input type="range" id="rmax" value="100" />
+            <div class="line"></div>
+          </div>
+          <span></span>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
