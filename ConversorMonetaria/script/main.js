@@ -50,14 +50,3 @@ apiDivisas("destino");
 document.querySelector(".arrow").addEventListener("click", () => {
     conversion();
 });
-
-/*window.addEventListener("resize", () => {
-    const screen = window.innerWidth;
-    const img = document.querySelector(".arrow img");
-    if(screen < 800) {
-        img.setAttribute("src", "./assets/arrowDown.svg");
-    } else {
-        img.setAttribute("src", "./assets/arrow.svg");
-    }
-    
-})*/
