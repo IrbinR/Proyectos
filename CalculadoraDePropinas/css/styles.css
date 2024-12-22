@@ -18,26 +18,30 @@ main {
 
 .container {
     background-color: #A1B0BA;
-    width: 30%;
-    height: 40rem;
+    width: 34rem;
+    height: 26rem;
     border-radius: 20px;
+    padding: 2rem;
 }
 
 h1 {
     text-align: center;
-    margin: 2rem 0;
+    margin-bottom: 1rem;
     color: #CDFE91;
-}
-
-.datos {
-    border: thin solid blue;
-    padding: 0 2rem;
 }
 
 .dato {
     display: flex;
     margin-bottom: 1rem;
-    border: thin solid yellow;
+}
+
+.icon {
+    width: 100%;
+    border: thin solid red;
+}
+
+img {
+    border: thin solid blue;
 }
 
 label {
@@ -49,18 +53,75 @@ input:not(.personalizado) {
     width: 10rem;
 }
 
+input {
+    background-color: #62707B;
+    outline: transparent;
+    border-color: transparent;
+    color: #fff;
+    text-align: end;
+    padding-right: 0.5rem;
+}
+
 .buttons {
-    border: 1px solid red;
     width: 10rem;
     display: flex;
     justify-content: space-between;
 }
 
-button {
+button:not(.calcular button) {
     width: 2.5rem;
+    color: #A1B0BA;
+}
+
+button {
+    background-color: #62707B;
+    border-color: transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+}
+
+.calcular {
+    text-align: center;
+    margin-top: 1.5rem;
+    /*border: thin solid rebeccapurple;*/
+}
+
+.calcular button {
+    width: 20rem;
+    height: 2rem;
+    color: #fff;
+}
+
+.active {
+    color: #fff;
+    background-color: #373c3f;
 }
 
 .personalizado {
-    width: 8.5rem;
-    /*margin-left: calc();*/
+    width: 9.5rem;
+    margin-left: auto;
+}
+
+.print {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    height: 10rem;
+    color: #E1F0FA;
+    font-size: 1.3rem;
+}
+
+.view {
+    display: flex;
+}
+
+span:nth-child(odd) {
+    width: 27rem;
+}
+
+span:nth-child(even) {
+    width: 100%;
+    padding-left: 2rem;
 }
