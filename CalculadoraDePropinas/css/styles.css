@@ -36,12 +36,46 @@ h1 {
 }
 
 .icon {
-    width: 100%;
-    border: thin solid red;
+    display: flex;
+    align-items: center;
+    margin-left: 0.6rem;
+    position: relative;
 }
 
 img {
-    border: thin solid blue;
+    height: 1.2rem;
+}
+
+.icon:hover div {
+    opacity: 1;
+    visibility: visible;
+}
+
+.icon div {
+    position: absolute;
+    width: 9.5rem;
+    font-size: 0.9rem;
+    padding: 8px;
+    border-radius: 8px;
+    left: 33px;
+    background-color: #f52d00;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.4s ease;
+}
+
+.icon div::after {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent;
+    /*border-top-color: #373c3f;
+    border-bottom-color: #373c3f;
+    border-left-color: #373c3f;*/
+    border-right-color: #f52d00;
+    left: -20px;
+    top: calc(50% - 10px);
+
 }
 
 label {

@@ -41,5 +41,40 @@ $propina.addEventListener("click", () => {
 })
 
 $calcular.addEventListener("click", () => {
-  
+  const regexTotal = /^-?\d+\.?\d+$/;
+  const regexEnteros = /^\d+$/;
+  const createElement = (valor) => {
+    const preview = document.createElement("div");
+    preview.setAttribute("class", "print");
+    const datos = {
+      "Propina total:" : $total.value, 
+      "Total a pagar:" : $Personas.value, 
+      "Monto por persona:" : valor
+    }
+    Object.keys(datos).forEach(key => {
+      const view = document.createElement("div");
+      view.setAttribute("class", "view");
+      const span1 = document.createElement("span");
+      span1.textContent = key;
+      const span2 = document.createElement("span");
+      span2.textContent = `S/. ${datos[key]}`;
+      view.appendChild(span1);
+      view.appendChild(span2);
+      preview.appendChild(view);
+    });
+    const $container = document.getElementsByClassName("container")[0];
+    $container.appendChild(preview);
+  }
+
+  const total = regexTotal.test($total.value);
+  const personas = regexEnteros.test($Personas.value);
+  const personalizado = regexEnteros.test($propina.value);
+
+  if (total && personas && porcentaje > 0) {
+    createElement(porcentaje);
+  } else if (total && personas && personalizado) {
+    createElement($propina);
+  } else {
+    // instrucciones faltantes
+  }
 })
