@@ -1,7 +1,7 @@
 const $inputs = document.getElementsByTagName("input");
 const $buttons = document.getElementsByClassName("buttons")[0].children;
 const $calcular = document.querySelector(".calcular button");
-console.log($buttons);
+//console.log($buttons);
 
 
 const $total = $inputs[0];
@@ -46,10 +46,14 @@ $calcular.addEventListener("click", () => {
   const createElement = (valor) => {
     const preview = document.createElement("div");
     preview.setAttribute("class", "print");
+    const totalCuenta = parseFloat($total.value);
+    const propinatotal = totalCuenta*valor;
+    const totalAPagar = totalCuenta + propinatotal;
+    const montoPorPersona = totalAPagar/parseInt($Personas.value);
     const datos = {
-      "Propina total:" : $total.value, 
-      "Total a pagar:" : $Personas.value, 
-      "Monto por persona:" : valor
+      "Propina total:" : propinatotal, 
+      "Total a pagar:" : totalAPagar, 
+      "Monto por persona:" : montoPorPersona
     }
     Object.keys(datos).forEach(key => {
       const view = document.createElement("div");
@@ -75,6 +79,29 @@ $calcular.addEventListener("click", () => {
   } else if (total && personas && personalizado) {
     createElement($propina);
   } else {
-    // instrucciones faltantes
+    const errors = (texto, index) => {
+      const dato = document.getElementsByClassName("dato")[index];
+      const icon = document.createElement("div");
+      const img = document.createElement("img");
+      const div = document.createElement("div");
+      icon.setAttribute("class", "icon");
+      img.setAttribute("src", "./assets/error.svg");
+      div.textContent = texto;
+      icon.appendChild(img);
+      icon.appendChild(div);
+      dato.appendChild(icon);
+    }
+    
+    if (!total) {
+      errors("Solo se admiten números positivos", 0);
+    }
+    
+    if (!personas) {
+      errors("Solo se admite numeros enteros positivos", 1);
+    }
+
+    if (porcentaje === 0 && !personalizado) {
+      errors("Solo se admite numeros enteros positivos", 2);
+    }
   }
 })
