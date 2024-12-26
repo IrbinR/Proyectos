@@ -12,22 +12,38 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
     background-color: bisque;
     height: 100vh;
+}
+
+.botones {
+    position: relative;
+    height: 7rem;
+}
+
+.contador__reflejo, .contador__interior-borde,
+.contador__interior-fondo, .contador__recorrido,
+.contador__apuntador, .contador__circulo, 
+.contador__horas, .iniciador, .fondo, .marcador {
+    position: absolute;
 }
 
 .marcador {
     display: flex;
     flex-direction: column;
     align-items: center;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -1rem;
 }
 
-.marcador__superior, .marcador__inferior, .iniciador {
+.marcador__superior, .marcador__inferior, .fondo {
     display: flex;
     justify-content: end;
 }
 
-.marcador__superior, .iniciador {
+.marcador__superior, .fondo {
     background-color: #365E7D;
 }
 
@@ -36,7 +52,7 @@ main {
     height: 2.5rem;
 }
 
-.marcador__inferior, .iniciador {
+.marcador__inferior, .fondo {
     width: 2.3rem;
 }
 
@@ -47,14 +63,23 @@ main {
 
 .iniciador {
     height: 3rem;
+    width: 100%;
+    bottom: 0;
+    transform: rotate(-20deg);
 }
 
 .marcador__superior, .marcador__superior div {
     border-radius: 0.8rem;
 }
 
-.iniciador, .iniciador div {
+.fondo, .fondo div {
     border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.fondo {
+    left: 3rem;
+    height: inherit;
+    transform: rotate(-9deg);
 }
 
 .marcador__superior div {
@@ -69,7 +94,7 @@ main {
     background-color: #365E7D;
 }
 
-.iniciador div {
+.fondo div {
     width: calc(2.3rem / 2);
     height: inherit;
     background-color: #3F6D8E;
@@ -83,13 +108,6 @@ main {
     background-color: #75CEF9;
     border-radius: 50%;
     overflow: hidden;
-}
-
-.contador__reflejo, .contador__interior-borde,
-.contador__interior-fondo, .contador__recorrido,
-.contador__apuntador, .contador__circulo, 
-.contador__horas {
-    position: absolute;
 }
 
 .contador__reflejo {
@@ -223,4 +241,80 @@ svg {
 
 .once {
     transform: rotate(60deg);
+}
+
+.datos {
+    width: 30rem;
+    height: 30rem;
+    background-color:#5CB338;
+    padding: 2rem;
+}
+
+.datos, .iniciadores div, .reiniciar, .caja input {
+    border-radius: 1rem;
+}
+
+.tiempo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.caja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.caja label {
+    font-weight: bold;
+}
+
+.caja input {
+    width: 6rem;
+    height: 6rem;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.controles {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.iniciadores {
+    display: flex;
+    gap: 0.5rem;
+    position: relative;
+}
+/*
+    COLORES:
+    #5CB338
+    #ECE852
+    #FFC145
+    #FB4141
+*/
+
+.iniciadores div, .reiniciar {
+    background-color: #FFC145;
+    width: 6rem;
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.iniciadores div:hover, .reiniciar:hover {
+    background-color: #ECE852;
+}
+
+.iniciadores div {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+
+.iniciadores .active {
+    opacity: 1;
+    visibility: visible;
 }
