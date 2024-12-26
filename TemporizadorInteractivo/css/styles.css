@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+    height: 100vh;
+}
+
+.marcador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marcador__superior, .marcador__inferior, .iniciador {
+    display: flex;
+    justify-content: end;
+}
+
+.marcador__superior, .iniciador {
+    background-color: #365E7D;
+}
+
+.marcador__superior {
+    width: 6rem;
+    height: 2.5rem;
+}
+
+.marcador__inferior, .iniciador {
+    width: 2.3rem;
+}
+
+.marcador__inferior {
+    background-color: #294B64;
+    height: 4rem;
+}
+
+.iniciador {
+    height: 3rem;
+}
+
+.marcador__superior, .marcador__superior div {
+    border-radius: 0.8rem;
+}
+
+.iniciador, .iniciador div {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.marcador__superior div {
+    width: 4rem;
+    height: inherit;
+    background-color: #3F6D8E;
+}
+
+.marcador__inferior div {
+    width: calc(2.3rem / 2);
+    height: inherit;
+    background-color: #365E7D;
+}
+
+.iniciador div {
+    width: calc(2.3rem / 2);
+    height: inherit;
+    background-color: #3F6D8E;
+
+}
+
+.contador {
+    position: relative;
+    width: 21rem;
+    height: 21rem;
+    background-color: #75CEF9;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.contador__reflejo, .contador__interior-borde,
+.contador__interior-fondo, .contador__recorrido,
+.contador__apuntador, .contador__circulo, 
+.contador__horas {
+    position: absolute;
+}
+
+.contador__reflejo {
+    top: 50%;
+    left: 2.6rem;
+    transform: translateY(-50%);
+    width: 21.2rem;
+    height: 21.2rem;
+    background-color: #90D8F9;
+    border-radius: 50%;
+}
+
+.contador__interior-borde {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16rem;
+    height: 16rem;
+    background-color: #365E7D;
+    border-radius: 50%;
+}
+
+.contador__interior-fondo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14.3rem;
+    height: 14.3rem;
+    background-color: #F4FBFF;
+    border-radius: 50%;
+}
+
+.contador__recorrido {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    width: 14.4rem;
+    height: 14.4rem;
+    border-radius: 50%;
+}
+
+.contador__apuntador {
+    top: 50%;
+    left: 57%;
+    transform: translate(-57%, -50%);
+    background-color: #FF9838;
+    width: 9rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+}
+
+.contador__circulo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFAA5B;
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.contador__circulo div {
+    position: absolute;
+    top: 50%;
+    right: -1.3rem;
+    transform: translateY(-50%);
+    width: inherit;
+    height: inherit;
+    background-color: #FFBA7E;
+    border-radius: 50%;
+}
+
+.contador__horas {
+    width: 100%;
+}
+
+.contador__horas div {
+    width: 1.3rem;
+    height: 1rem;
+    background-color: #365E7D;
+    border-radius: 0.7rem 0 0 0.7rem;
+    transform: rotate(180deg);
+}
+
+.doce {
+    transform: rotate(90deg);
+}
+
+.tres {
+    transform: rotate(180deg);
+}
+
+.seis {
+    transform: rotate(270deg);
+}
+
+.uno {
+    transform: rotate(120deg);
+}
+
+.dos {
+    transform: rotate(150deg);
+}
+
+.cuatro {
+    transform: rotate(210deg);
+}
+
+.cinco {
+    transform: rotate(240deg);
+}
+
+.siete {
+    transform: rotate(300deg);
+}
+
+.ocho {
+    transform: rotate(330deg);
+}
+
+.diez {
+    transform: rotate(30deg);
+}
+
+.once {
+    transform: rotate(60deg);
+}
